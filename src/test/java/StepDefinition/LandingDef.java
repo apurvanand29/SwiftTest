@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.LandingPage;
@@ -18,6 +19,16 @@ LandingPage landingPage=new LandingPage(driver);
     @When("User clicks hamburger menu")
     public void user_clicks_hamburger_menu() {
         landingPage.clickHamburgerMenu();
+    }
+
+    @When("User clicks on SignIn Portal")
+    public void user_clicks_on_SignIn_Portal() {
+        landingPage.clickOnSignInPortal();
+    }
+
+    @Then("User must be able to see Login page")
+    public void user_should_be_able_to_see_Login_page() {
+
     }
 
 }

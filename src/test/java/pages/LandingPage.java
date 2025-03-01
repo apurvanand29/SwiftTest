@@ -14,6 +14,9 @@ public class LandingPage {
     @FindBy(xpath = "//div[@id= \"menuToggle\"]/input[@type='checkbox']")
     private WebElement hamburgerMenu;
 
+    @FindBy(xpath ="//ul/a/li[text()='Sign In Portal']")
+    private WebElement signInPortal;
+
     public LandingPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -24,9 +27,19 @@ public class LandingPage {
      return title.isDisplayed();
     }
 
+    // Click on hamburger menu
     public void clickHamburgerMenu() {
         try {
             hamburgerMenu.click();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Click on Sign in portal
+    public void clickOnSignInPortal() {
+        try {
+            signInPortal.click();
         }catch (Exception e) {
             e.printStackTrace();
         }
