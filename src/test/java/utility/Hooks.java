@@ -1,21 +1,26 @@
 package utility;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Hooks {
-    public static BrowserDriver driver;
-    public static ChromeOptions options;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Hooks extends BrowserDriver{
+
 
     @Before
     public void setUp(){
-        driver = new BrowserDriver();
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver");
+        BrowserDriver.driver = new ChromeDriver();
+        BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
     }
+
 
     @After
     public void tearDown(){
-        driver.close();
+        if (BrowserDriver.driver != null) {
+            BrowserDriver.driver.quit(); // Close and quit the driver after tests
+        }
     }
 }
