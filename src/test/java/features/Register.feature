@@ -9,3 +9,15 @@ Feature: User Registration
     When User clicks Register Here button
     Then User must see User Registration Page
 
+  Scenario: User Registers Successfully
+    When User enters following on Registration page
+    | Salutation | Ms.      |
+    | First Name | Poppy    |
+    | Last Name  | Pig      |
+    | Email id   | pp@g.com |
+    | Contact    | 9898989  |
+    | Username   | pop      |
+    | Password   | pop      |
+    And User hits Submit button
+    Then User must see User Registered Successfully
+
