@@ -11,6 +11,7 @@ Feature: User Registration
 
   Scenario: User Registers Successfully
     When User enters following on Registration page
+    |Field       | Value    |
     | Salutation | Ms.      |
     | First Name | Poppy    |
     | Last Name  | Pig      |

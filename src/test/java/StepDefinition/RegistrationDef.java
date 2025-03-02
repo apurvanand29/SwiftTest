@@ -21,15 +21,7 @@ public class RegistrationDef {
         // Convert DataTable to a List of Maps (Key-Value Pairs)
         List<Map<String, String>> registrationData = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> data : registrationData) {
-            registrationPage.enterRegistrationDetails(
-                    data.get("Salutation"),
-                    data.get("First Name"),
-                    data.get("Last Name"),
-                    data.get("Email id"),
-                    data.get("Contact"),
-                    data.get("Username"),
-                    data.get("Password")
-            );
+            registrationPage.enterRegistrationDetails(data.get("Field"), data.get("Value"));
         }
     }
 

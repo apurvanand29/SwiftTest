@@ -23,7 +23,7 @@ public class RegistrationPage extends BrowserDriver {
     @FindBy(xpath = "//input[@type='submit']")
     private WebElement submitBtn;
 
-    @FindBy(xpath = "//select/option")
+    @FindBy(xpath = "//select")
     private WebElement salutationDropdown;
 
     @FindBy(xpath = "//label[@for='firstname']//following::input[@id='firstname']")
@@ -58,16 +58,33 @@ public class RegistrationPage extends BrowserDriver {
     }
 
     //User enters registration data
-    public void enterRegistrationDetails(String salutation, String firstName, String lastName, String emailId, String contactNumber, String username, String password){
-        // Select the Salutation from the dropdown
-        Select salutationSelect = new Select(salutationDropdown);
-        salutationSelect.selectByVisibleText(salutation);
-        firstNameVal.sendKeys(firstName);
-        lastNameVal.sendKeys(lastName);
-        emailVal.sendKeys(emailId);
-        contactNumberVal.sendKeys(contactNumber);
-        usernameVal.sendKeys(username);
-        passwordVal.sendKeys(password);
+    public void enterRegistrationDetails(String field, String value){
+        switch (field) {
+            case "Salutation":
+                Select salutationSelect = new Select(salutationDropdown);
+                salutationSelect.selectByVisibleText(value);
+                break;
+            case "First Name":
+                firstNameVal.sendKeys(value);
+                break;
+            case "Last Name":
+                lastNameVal.sendKeys(value);
+                break;
+            case "Email id":
+                emailVal.sendKeys(value);
+                break;
+            case "Contact":
+                contactNumberVal.sendKeys(value);
+                break;
+            case "Username":
+                usernameVal.sendKeys(value);
+                break;
+            case "Password":
+                passwordVal.sendKeys(value);
+                break;
+            default:
+                System.out.println("Field not recognized: " + field);
+         }
     }
 
     // User hits submit button on registration page
@@ -78,5 +95,4 @@ public class RegistrationPage extends BrowserDriver {
             e.printStackTrace();
         }
     }
-
 }
