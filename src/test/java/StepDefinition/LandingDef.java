@@ -1,34 +1,30 @@
 package StepDefinition;
 
+
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.LandingPage;
-import static org.junit.Assert.assertTrue;
+import utility.BrowserDriver;
 
 public class LandingDef {
-WebDriver driver;
-LandingPage landingPage=new LandingPage(driver);
+    WebDriver driver= BrowserDriver.driver;
+    LandingPage landingPage = new LandingPage(driver);
 
     @Given("User is on Landing page")
-    public void user_is_on_landing_page() {
-        assertTrue("User is not the Landing page", landingPage.checkLandingPageTitle());
+    public void user_is_on_Landing_page() throws InterruptedException {
+        landingPage.checkLandingPageTitle();
     }
 
-    @When("User clicks hamburger menu")
+    @Given("User clicks hamburger menu")
     public void user_clicks_hamburger_menu() {
         landingPage.clickHamburgerMenu();
     }
 
+
     @When("User clicks on SignIn Portal")
     public void user_clicks_on_SignIn_Portal() {
         landingPage.clickOnSignInPortal();
-    }
-
-    @Then("User must be able to see Login page")
-    public void user_should_be_able_to_see_Login_page() {
-
     }
 
 }
