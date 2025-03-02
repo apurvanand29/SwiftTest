@@ -21,7 +21,8 @@ public class LoginPage extends BrowserDriver {
     @FindBy(id = "pwd")
     private static WebElement passwordVal;
 
-    @FindBy()
+    @FindBy(xpath = "//input[@type='submit']")
+    private static WebElement loginBtn;
 
     // Constructor to initialize elements
     public LoginPage(WebDriver driver) {
