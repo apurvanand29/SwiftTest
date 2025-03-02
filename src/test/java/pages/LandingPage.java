@@ -33,7 +33,7 @@ public class LandingPage extends BrowserDriver {
     }
 
     // This method helps to check if user landed on Landing page and can see the page title
-    public void checkLandingPageTitle() throws InterruptedException {
+    public void checkHomePageTitle() throws InterruptedException {
         String actualTitle = pageTitle.getText();
         assertEquals("Ace Online Shoe Portal", actualTitle);
     }

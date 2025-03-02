@@ -11,9 +11,9 @@ public class LandingDef {
     WebDriver driver= BrowserDriver.driver;
     LandingPage landingPage = new LandingPage(driver);
 
-    @Given("User is on Landing page")
-    public void user_is_on_Landing_page() throws InterruptedException {
-        landingPage.checkLandingPageTitle();
+    @Given("User is on Home page")
+    public void user_is_on_Home_page() throws InterruptedException {
+        landingPage.checkHomePageTitle();
     }
 
     @Given("User clicks hamburger menu")
