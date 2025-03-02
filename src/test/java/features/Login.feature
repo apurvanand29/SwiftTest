@@ -5,7 +5,6 @@ Feature: User login
     When User clicks on SignIn Portal
     Then User must be able to see Login page
 
-  Scenario: User enters username and password
     When User enters username "pop"
     And User enters password "pop"
     And User hits Login button
