@@ -7,3 +7,5 @@ Feature: User Registration
 
   Scenario: User Lands on Registration page
     When User clicks Register Here button
+    Then User must see User Registration Page
+
