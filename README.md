@@ -41,3 +41,6 @@ Step Definitions are Java methods that connect the steps written in Gherkin to t
 **RegistrationDef.java** : Actions for registering a user.
 
 **RegistrationSuccessDef.java** : Step definitions related to verifying the success of the registration process.
+
+## Test Plan
+Find the link to [Test Plan](https://docs.google.com/document/d/15E2O3wQNZdPIkhb0909jZ4Nb5MdjKhhP/edit?usp=sharing&ouid=110988488652453296560&rtpof=true&sd=true) for this automating testing project 
