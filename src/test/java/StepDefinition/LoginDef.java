@@ -31,4 +31,9 @@ public class LoginDef {
     public void user_Hits_Login_Button() {
         loginPage.hitLoginBtn();
     }
+
+    @When("User clicks Register Here button")
+    public void user_Clicks_Register_Here_Button() {
+        loginPage.clickRegisterBtn();
+    }
 }

@@ -24,6 +24,9 @@ public class LoginPage extends BrowserDriver {
     @FindBy(xpath = "//input[@type='submit']")
     private static WebElement loginBtn;
 
+    @FindBy(id = "NewRegistration")
+    private static WebElement registerBtn;
+
     // Constructor to initialize elements
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -57,6 +60,15 @@ public class LoginPage extends BrowserDriver {
     public void hitLoginBtn() {
         try{
             loginBtn.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // User clicks Register Here! button
+    public void clickRegisterBtn(){
+        try{
+            registerBtn.click();
         } catch (Exception e) {
             e.printStackTrace();
         }
