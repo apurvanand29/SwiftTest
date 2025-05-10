@@ -22,11 +22,20 @@ public class Hooks extends BrowserDriver {
          //mvn BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 
         // Set the path to the ChromeDriver executable with Docker
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized", "disable-infobars", "--disable-extensions");
-        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        String useGrid = System.getProperty("useGrid", "false");
 
-        BrowserDriver.driver = new RemoteWebDriver(remoteUrl, options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized", "disable-infobars");
+
+        if (useGrid.equalsIgnoreCase("true")) {
+            // Run using Selenium Grid (e.g., Docker)
+            BrowserDriver.driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+        } else {
+            // Run locally using ChromeDriver
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver");
+            BrowserDriver.driver = new ChromeDriver(options);
+        }
+
         BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
     }
 

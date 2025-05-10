@@ -2,7 +2,7 @@
 # Add the `-d` flag at the end for detached execution
 # To stop the execution, hit Ctrl+C, and then `docker compose -f docker-compose-v3.yml down`
 services:
-  chrome:
+  chrome1:
     image: selenium/node-chrome:4.32.0-20250505
     platform: linux/amd64
     shm_size: 2gb
@@ -11,8 +11,8 @@ services:
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
 
-  edge:
-    image: selenium/node-edge:4.32.0-20250505
+  chrome2:
+    image: selenium/node-chrome:4.32.0-20250505
     platform: linux/amd64
     shm_size: 2gb
     depends_on:
@@ -20,13 +20,22 @@ services:
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
 
-  firefox:
-    image: selenium/node-firefox:4.32.0-20250505
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
+#  edge:
+#    image: selenium/node-edge:4.32.0-20250505
+#    platform: linux/amd64
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#
+#  firefox:
+#    image: selenium/node-firefox:4.32.0-20250505
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
 
   selenium-hub:
     image: selenium/hub:4.32.0-20250505
@@ -42,7 +51,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - selenium-hub
-      - chrome
+      - chrome1
+      - chrome2
     environment:
       - MAVEN_OPTS=-Dmaven.repo.local=/root/.m2
     networks:
