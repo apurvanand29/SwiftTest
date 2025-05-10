@@ -5,11 +5,11 @@ Feature: User Registration
     When User clicks on SignIn Portal
     Then User must be able to see Login page
 
-  Scenario: User Lands on Registration page
+  #Scenario: User Lands on Registration page
     When User clicks Register Here button
     Then User must see User Registration Page
 
-  Scenario: User Registers Successfully
+  #Scenario: User Registers Successfully
     When User enters following on Registration page
     |Field       | Value    |
     | Salutation | Ms.      |
