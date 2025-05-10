@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 public class HomePage extends BrowserDriver {
     WebDriver driver;
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Wait for 10 seconds
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait for 10 seconds
 
     @FindBy(xpath = "//font[contains(text(),'Ace Online Shoe Portal')]")
     private WebElement pageTitle;

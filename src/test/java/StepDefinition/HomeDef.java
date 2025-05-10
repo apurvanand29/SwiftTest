@@ -9,10 +9,11 @@ import utility.BrowserDriver;
 
 public class HomeDef {
     WebDriver driver= BrowserDriver.driver;
-    HomePage landingPage = new HomePage(driver);
+    HomePage landingPage;
 
     @Given("User is on Home page")
     public void user_is_on_Home_page() throws InterruptedException {
+        landingPage = new HomePage(driver);
         landingPage.checkHomePageTitle();
     }
 

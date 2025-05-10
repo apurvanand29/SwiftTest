@@ -1,3 +1,4 @@
+@register
 Feature: User Registration
   Scenario: User is able to land login page
     Given User is on Home page

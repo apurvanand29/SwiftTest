@@ -7,10 +7,11 @@ import utility.BrowserDriver;
 
 public class LandingDef {
     WebDriver driver= BrowserDriver.driver;
-    LandingPage landingPage = new LandingPage(driver);
+    LandingPage landingPage;
 
     @Then("User must see {string} url")
     public void user_must_see_url(String url) {
+        landingPage = new LandingPage(driver);
         landingPage.checkLandingPageUrl(url);
     }
 }

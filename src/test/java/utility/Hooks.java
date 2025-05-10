@@ -14,29 +14,23 @@ import java.net.URL;
 public class Hooks extends BrowserDriver {
 
     // To ensure 1 browser session
-    @BeforeAll
+    @Before
     public static void setUp() throws MalformedURLException {
         // Set the path to the ChromeDriver executable without Docker
-        /*
-         * System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
-         * + "/src/test/resources/drivers/chromedriver");
-         * BrowserDriver.driver = new ChromeDriver();
-         * BrowserDriver.driver.get(
-         * "https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
-         */
+         // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver");
+         // BrowserDriver.driver = new ChromeDriver();
+         //mvn BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 
         // Set the path to the ChromeDriver executable with Docker
-        /*
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized", "disable-infobars", "--disable-extensions");
         URL remoteUrl = new URL("http://localhost:4444/wd/hub");
 
         BrowserDriver.driver = new RemoteWebDriver(remoteUrl, options);
         BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
-*/
     }
 
-    @AfterAll
+    @After
     public static void tearDown() {
         if (BrowserDriver.driver != null) {
             BrowserDriver.driver.quit(); // Close and quit the driver after tests

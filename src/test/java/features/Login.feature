@@ -1,3 +1,4 @@
+@login
 Feature: User login
   Scenario: User is able to land login page
     Given User is on Home page
