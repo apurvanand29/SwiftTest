@@ -31,7 +31,7 @@ public class Hooks extends BrowserDriver {
             // Run using Selenium Grid (e.g., Docker)
             //BrowserDriver.driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
             // Run on Azure public IP using docker
-            BrowserDriver.driver = new RemoteWebDriver(new URL("https://135.119.197.200:4444/"), options);
+            BrowserDriver.driver = new RemoteWebDriver(new URL("http://135.119.197.200:4444/"), options);
         } else {
             // Run locally using ChromeDriver
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver");

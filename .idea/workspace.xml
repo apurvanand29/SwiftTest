@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="58a338e6-0f40-441e-804f-3ae71d50e1b9" name="Changes" comment="SwiftTest Framework setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/Register.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Register.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/utility/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utility/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740705031467</updated>
       <workItem from="1740705034271" duration="6592000" />
-      <workItem from="1746925168641" duration="1291000" />
+      <workItem from="1746925168641" duration="2193000" />
     </task>
     <servers />
   </component>
