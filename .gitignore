@@ -6,3 +6,4 @@ cucumber.json
 .settings
 target/
 .dockerignore
+.workspace.xml
