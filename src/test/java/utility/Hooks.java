@@ -4,12 +4,17 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.DGSelectAddressPage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class Hooks extends BrowserDriver {
 
@@ -38,7 +43,9 @@ public class Hooks extends BrowserDriver {
             BrowserDriver.driver = new ChromeDriver(options);
         }
 
-        BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+        //BrowserDriver.driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        BrowserDriver.driver.get("https://www.dollargeneral.com");
     }
 
     @After

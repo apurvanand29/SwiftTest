@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = {"src/test/resources/features/"},
 glue = {"utility", "StepDefinition"},
 plugin = {"pretty", "html:target/cucumber-html-report", "json:cucumber.json"},
-tags = "@login or @register",
+tags = "~@login or ~@register or @DG",
 monochrome = true)
 
 public class TestRunner {
